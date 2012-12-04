@@ -1,7 +1,6 @@
-<h1>Sessions#create</h1>
-<p>Find me in app/views/sessions/create.html.erb</p>
+<h1>Successfully logged in as <%= @auth_hash[:info][:nickname] %></h1>
 
 <%= @auth_hash[:uid] %>
-<%= debug @auth_hash[:info][:nickname] %>
-<%= debug @auth_hash[:info][:email] %>
+<%= @auth_hash[:info][:nickname] %>
+<%= @auth_hash[:info][:email] %>
 
