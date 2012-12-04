@@ -1,14 +1,9 @@
 ArchSer::Application.routes.draw do
   resources :users
 
-
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/failure"
-  
   get '/login', :to => 'sessions#new', :as => :login
+  
+  get '/logout', :to => 'sessions#destroy'
   
   match '/auth/:provider/callback', :to => 'sessions#create'
   
