@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(:version => 20121204133649) do
     t.string   "nickname"
     t.string   "email"
     t.boolean  "admin"
-    t.date     "created"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

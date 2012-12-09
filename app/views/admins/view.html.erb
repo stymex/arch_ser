@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<%= javascript_include_tag 'dhtmlx/dhtmlxcommon.js' %>
+		<%= javascript_include_tag 'dhtmlx/dhtmlxgrid.js' %>
+		<%= javascript_include_tag 'dhtmlx/dhtmlxgridcell.js' %>
+		<%= javascript_include_tag 'dhtmlx/dhtmlxdataprocessor.js' %>
+		<%= javascript_include_tag 'dhtmlx/ext/dhtmlxgrid_filter.js' %>
+
+		<%= stylesheet_link_tag 'dhtmlx/dhtmlxgrid.css' %>
+		<%= stylesheet_link_tag 'dhtmlx/skins/dhtmlxgrid_dhx_black.css' %>
+		<%= stylesheet_link_tag 'dhtmlx/skins/dhtmlxgrid_dhx_skyblue.css' %>
+		<%= stylesheet_link_tag 'dhtmlx/skins/dhtmlxgrid_dhx_blue.css' %>
+		<%= stylesheet_link_tag 'dhtmlx/skins/dhtmlxgrid_dhx_terrace.css' %>
+		<%= stylesheet_link_tag 'dhtmlx/skins/dhtmlxgrid_dhx_web.css' %>
+	</head>
+	<body>
+		<div id="dhtmlx_grid" style="width:700px; height:300px;"></div>
+		<script type="text/javascript" charset="utf-8">
+			var grid = new dhtmlXGridObject("dhtmlx_grid");
+			grid.setImagePath("/assets/dhtmlx/imgs/");
+			grid.setHeader("Uid, Nickname, Email, Admin");
+			grid.attachHeader("#text_filter,#text_filter,#text_filter,#text_filter");
+            grid.setColSorting("str,str,str,str");
+			grid.setInitWidths("*,*,*,*");
+			grid.setSkin("dhx_terrace");
+			grid.init();
+			grid.load("/admin/data.xml");
+			
+			dp = new dataProcessor("/admin/dbaction.xml");
+            dp.init(grid)
+		</script>
+		<input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new user')">
+		<input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+	</body>
+</html>
