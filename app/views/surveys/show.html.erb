@@ -1,0 +1,27 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<b>Name:</b>
+	<%= @survey.name %>
+</p>
+
+<ol>
+	<% for question in @survey.questions %>
+	<li>
+		<%= h question.content %>
+	</li>
+	<ul>
+		<% for answer in question.answers %>
+		<li>
+			<%= h answer.content %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+</ol>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back', surveys_path %>

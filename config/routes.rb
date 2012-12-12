@@ -1,16 +1,14 @@
 ArchSer::Application.routes.draw do
-
-  resource :admin do
-    collection do
-      get 'view'
-      get 'data'
-      get 'dbaction'
-    end
-  end
   
-  resources :admin, :only => [:data, :view, :dbaction]
+  resources :surveys
+  
+  get '/admin', :to => 'admins#view'
+  
+  get '/admin/data', :to => 'admins#data'
+  
+  get '/admin/dbaction', :to => 'admins#dbaction'
 
-  get '/', :to => 'sessions#new', :as => :login
+  get '/', :to => 'surveys#index'
 
   get '/login', :to => 'sessions#new', :as => :login
 
