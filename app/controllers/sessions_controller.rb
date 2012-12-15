@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     user = User.find_all_by_uid_and_nickname(auth_hash["uid"],auth_hash["info"]["nickname"]);
     session["uid"]=auth_hash["uid"]
+    session["nickname"]=auth_hash["info"]["nickname"]
     if user.count > 0
-      render :text => "Welcome back! You have already signed up."
     else
       user = User.new :uid => auth_hash["uid"], :nickname=> auth_hash["info"]["nickname"], :email =>auth_hash["info"]["email"], :admin => false
       user.save
-      render :text => "You've signed up."
     end
+    redirect_to '/'
   end
 
   def failure
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session["uid"] = nil
-    render :text => "You've logged out!"
+    redirect_to '/'
   end
 
 end

@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ArchSer</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>My Surveys</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="bg1"></div>
+		<div id="bg2"></div>
+		<div id="outer">
+			<div id="header">
+				<div id="logo">
+					<h1><%= link_to 'My surveys', '/' %></h1>
+				</div>
+				<div id="nav">
+					<ul>
+						<li class="first">
+							<% if !session["uid"].present? %>
+								<%= link_to 'Login', '/auth/github' %>
+								<% else %>
+								<%= link_to session["nickname"]+' Logout', '/logout' %>
+							<% end %>
+						</li>
+						<li class="last">
+							<%= link_to 'Admin panel', '/admin' %>
+						</li>
+					</ul>
+					<br class="clear" />
+				</div>
+			</div>
 
-<%= yield %>
+			<div id="main">
+				<div id="sidebar">
+					<div class="box">
 
-</body>
+					</div>
+					<div class="box">
+						<h3> Menu </h3>
+						<ul class="linkedList">
+							<li class="first">
+								<%= link_to 'All Surveys', :controller => "surveys", :action => "index" %>
+
+							</li>
+							<li class="last">
+								<%= link_to 'New Survey', new_survey_path %>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="content">
+					<div class="box">
+						<%= yield %>
+					</div>
+					<br class="clear" />
+				</div>
+				<br class="clear" />
+			</div>
+		</div>
+		<div id="copyright"></div>
+	</body>
 </html>

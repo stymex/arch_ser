@@ -14,10 +14,9 @@
 <% end %>
 
 <div class="field">
-	<%= f.label :name %><br />
-	<%= f.text_field :name %>
+	<p><%= f.label :name %> <%= f.text_field :name %></p>
 </div>
-
+<hr/>
 
 <%= f.fields_for :questions do |builder| %>
 	<%= render 'question_fields', :f => builder %>

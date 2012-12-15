@@ -6,6 +6,10 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find(params[:id])
   end
+  
+  def vote
+
+  end
 
   def new
     @survey = Survey.new
@@ -21,6 +25,11 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(params[:survey])
+    for question in @survey.questions
+      for answer in question.answers
+        answer.votes=0
+      end
+    end
     if @survey.save
       redirect_to @survey, notice: 'Survey was successfully created.'
     else

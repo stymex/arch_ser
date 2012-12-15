@@ -3,9 +3,12 @@ class AdminsController < ApplicationController
   before_filter :auth
   def auth
     if !session["uid"].present?
-      redirect_to "/login"
+      redirect_to "/auth/github"
     end
-    user = User.find_all_by_uid(session["uid"])
+    user = User.find_by_uid(session["uid"])
+    if !user.admin
+      render :text => "Access Denied!"
+    end
   end
   
   def view
@@ -14,6 +17,7 @@ class AdminsController < ApplicationController
   def data
     @users = User.all()
   end
+
 
   def dbaction
     #called for all db actions
