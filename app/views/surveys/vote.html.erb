@@ -1,0 +1,29 @@
+<p id="notice">
+	<%= notice %>
+</p>
+<div class="vote_form">
+<p>
+	<b>Name:</b>
+	<%= @survey.name %>
+</p>
+
+<%= form_tag do %>
+	<ol>
+		<% for question in @survey.questions %>
+		<li>
+			<%= h question.content %>
+		</li>
+		<ul>
+			<% for answer in question.answers %>
+			<li>
+				<%= radio_button_tag(:answer_id, answer.id) %>
+				<%= label_tag(answer.content) %>
+			</li>
+			<% end %>
+		</ul>
+		<% end %>
+	</ol>
+<% end %>
+</div>
+
+

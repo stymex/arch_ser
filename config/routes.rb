@@ -5,6 +5,8 @@ ArchSer::Application.routes.draw do
       get 'vote'
     end
   end
+  
+  get '/surveys/vote/:id', :to => 'surveys#vote'
 
   get '/admin', :to => 'admins#view'
 

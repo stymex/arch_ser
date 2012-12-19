@@ -20,7 +20,7 @@ div.gridbox_dhx_terrace table.obj tr td{
 }
 div.gridbox_dhx_terrace .xhdr{
 	border-bottom:1px solid #cecece;
-	background-color:#f9f9f9;
+	background-color:#CECECE;
 }
 div.gridbox_dhx_terrace table.hdr td div.hdrcell{
 	width:auto;
@@ -45,7 +45,7 @@ div.gridbox_dhx_terrace table.hdr td {
 	border-width: 0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
 	
-	background-color:#f9f9f9;
+	background-color:#CECECE;
 	
 	
 	font-family:Arial;
@@ -80,19 +80,19 @@ div.gridbox_dhx_terrace table.obj tr  td.editable div.treegrid_cell{
 	padding-top:1px;
 }
 div.gridbox_dhx_terrace table.obj tr.rowselected{
-	background-color:#fff3a1;
+	background-color:#1FA2BF;
 }
 div.gridbox_dhx_terrace table.obj tr.rowselected td{
-	background-color:#fff3a1;
+	background-color:#1FA2BF;
 }
 div.gridbox_dhx_terrace table.obj.row20px tr.rowselected td{
-	background-color:#fff3a1;
+	background-color:#1FA2BF;
 }
 div.gridbox_dhx_terrace table.obj tr.rowselected td.cellselected {
-	background-color:#fff3a1;
+	background-color:#1FA2BF;
 }
 div.gridbox_dhx_terrace .odd_dhx_terrace{
-	background-color:#fafaf8;
+	background-color:#CECECE;
 }
 
 .gridbox_dhx_terrace .dhx_combo_edit{

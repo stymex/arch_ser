@@ -20,11 +20,10 @@ a:hover {
 }
 
 body {
-	font-size: 12pt;
-	line-height: 1.8em;
-	font-family: Arial, sans-serif;
-	background: #dddddd;
-	color: #656565;
+  font-size: 12pt;
+  font-family: 'Arvo';
+  font-style: normal;
+  src: local('Arvo'), url(http://themes.googleusercontent.com/static/fonts/arvo/v5/WJ6D195CfbTRlIs49IbkFw.woff) format('woff');
 }
 
 br.clear {
@@ -110,33 +109,6 @@ ul {
 	box-shadow: inset 0px 10px 60px 0px rgba(0,0,0,0.7);
 }
 
-#banner {
-	position: relative;
-	width: 1180px;
-	height: 300px;
-}
-
-#banner .captions {
-	position: absolute;
-	right: 0;
-	top: 105px;
-	text-shadow: 2px 2px 0px rgba(0,0,0,1.0);
-}
-
-#banner .captions h2 {
-	background: rgba(0,0,0,0.7);
-	color: #ffffff;
-	padding: 28px;
-	margin: 0;
-}
-
-#banner .captions h3 {
-	background: rgba(10,127,153,0.8);
-	color: #ffffff;
-	padding: 28px;
-	margin: 0;
-}
-
 #content {
 	width: 854px;
 	margin: 0 0 0 270px;
@@ -194,7 +166,6 @@ ul {
 
 #main ul li {
 	padding: 8px 0 8px 0;
-	border-top: solid 1px #d1d1d1;
 }
 
 #main ul li.first {

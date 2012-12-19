@@ -8,7 +8,7 @@ class SurveysController < ApplicationController
   end
   
   def vote
-
+    @survey = Survey.find(params[:id])
   end
 
   def new

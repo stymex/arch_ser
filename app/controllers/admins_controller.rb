@@ -6,8 +6,10 @@ class AdminsController < ApplicationController
       redirect_to "/auth/github"
     end
     user = User.find_by_uid(session["uid"])
-    if !user.admin
-      render :text => "Access Denied!"
+    if !user.nil?
+      if !user.admin
+        render :text => "Access Denied!"
+      end
     end
   end
   
