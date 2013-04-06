@@ -1773,3 +1773,11 @@ Served asset /surveys.js - 304 Not Modified (5ms)
 
 Started GET "/assets/users.js?body=1" for 193.106.129.232 at 2013-04-06 17:51:47 +0200
 Served asset /users.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20121204133649)
+Migrating to Surveys (20121212160237)
+Migrating to Questions (20121212160253)
+Migrating to Answers (20121212160301)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
