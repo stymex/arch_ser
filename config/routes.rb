@@ -1,7 +1,7 @@
 ArchSer::Application.routes.draw do
 
   get "static_pages/home"
-
+  get "static_pages/about"
   get "static_pages/help"
 
   resources :surveys do
@@ -9,7 +9,7 @@ ArchSer::Application.routes.draw do
       get 'vote'
     end
   end
-  
+
   get '/surveys/vote/:id', :to => 'surveys#vote'
 
   get '/admin', :to => 'admins#view'

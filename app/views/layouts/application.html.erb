@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My Surveys</title>
+		<title>My Surveys | <%= yield(:title) %></title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
@@ -26,6 +26,9 @@
 						<li class="last">
 							<%= link_to 'Admin panel', '/admin' %>
 						</li>
+						<li><%= link_to 'Home', '/static_pages/home' %></li>
+						<li><%= link_to 'Help', '/static_pages/help' %></li>
+						<li><%= link_to 'About', '/static_pages/about' %></li>
 					</ul>
 					<br class="clear" />
 				</div>
