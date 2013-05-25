@@ -2,65 +2,59 @@
 <html>
 	<head>
 		<title>My Surveys | <%= yield(:title) %></title>
-		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= stylesheet_link_tag    "application", media: "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body>
-		<div id="bg1"></div>
-		<div id="bg2"></div>
-		<div id="outer">
-			<div id="header">
-				<div id="logo">
-					<h1><%= link_to 'My surveys', '/' %></h1>
-				</div>
-				<div id="nav">
-					<ul>
-						<li class="first">
-							<% if !session["uid"].present? %>
+		<header class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<%= link_to "My surveys", '#', id: "logo" %>
+					<nav>
+						<ul class="nav pull-right">
+							<li>
+								<% if !session["uid"].present? %>
 								<%= link_to 'Login', '/auth/github' %>
 								<% else %>
 								<%= link_to session["nickname"]+' Logout', '/logout' %>
-							<% end %>
-						</li>
-						<li class="last">
-							<%= link_to 'Admin panel', '/admin' %>
-						</li>
-						<li><%= link_to 'Home', '/static_pages/home' %></li>
-						<li><%= link_to 'Help', '/static_pages/help' %></li>
-						<li><%= link_to 'About', '/static_pages/about' %></li>
-					</ul>
-					<br class="clear" />
-				</div>
-			</div>
-
-			<div id="main">
-				<div id="sidebar">
-					<div class="box">
-
-					</div>
-					<div class="box">
-						<h3> Menu </h3>
-						<ul class="linkedList">
-							<li class="first">
-								<%= link_to 'All Surveys', :controller => "surveys", :action => "index" %>
-
+								<% end %>
 							</li>
-							<li class="last">
+							<li>
+								<%= link_to 'Admin panel', '/admin' %>
+							</li>
+							<li>
+								<%= link_to 'Home', '/static_pages/home' %>
+							</li>
+							<li>
+								<%= link_to 'Help', '/static_pages/help' %>
+							</li>
+							<li>
+								<%= link_to 'About', '/static_pages/about' %>
+							</li>
+							<li>
+								<%= link_to 'All Surveys', :controller => "surveys", :action => "index" %>
+							</li>
+							<li>
 								<%= link_to 'New Survey', new_survey_path %>
 							</li>
 						</ul>
-					</div>
+					</nav>
 				</div>
-				<div id="content">
-					<div class="box">
-						<%= yield %>
-					</div>
-					<br class="clear" />
-				</div>
-				<br class="clear" />
 			</div>
+		</header>
+		<div class="container">
+			<%= yield %>
 		</div>
-		<div id="copyright"></div>
+		<footer class="footer">
+			<nav>
+				<ul>
+
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>

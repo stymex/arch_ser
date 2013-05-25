@@ -2,7 +2,7 @@
 	<p>
 		<%= f.label :content, "Question" %>
 		<%= f.text_field :content %>
-		<%= link_to_remove_fields "remove", f %>
+		<%= link_to_remove_fields "remove", f%>
 	</p>
 	<%= f.fields_for :answers do |builder| %>
 	<%= render 'answer_fields', :f => builder %>
